@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "roboto";
+    src: url(font/Roboto-Regular.ttf);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+/* Set body defaults */
+body {
+  font-family: "roboto", sans-serif;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*---Default styles done---*/
+/*---Begin custom css---*/
