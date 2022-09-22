@@ -201,9 +201,32 @@ button {
 }
 
 .main {
-    background-color: var(--medium-back-color);
-    grid-column: 2;
-    grid-row: 2;
+  background-color: var(--medium-back-color);
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 1em;
+}
+
+.projects {
+  grid-column: 1/3;
+  grid-row: 1/3;
+}
+
+.main p {
+  font-family: "roboto-bold";
+}
+
+.announcements {
+  grid-column: 3/4;
+  grid-row: 1;
+}
+
+.trending {
+  grid-column: 3/4;
+  grid-row: 2;
 }
 
 /*---hover, focus effects---*/
