@@ -3,6 +3,11 @@
     src: url(font/Roboto-Regular.ttf);
 }
 
+@font-face {
+  font-family: "roboto-bold";
+  src: url(font/Roboto-Bold.ttf);
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -64,10 +69,8 @@ a {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 6fr;
+    grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr 5fr;
-    background-color: #d1fae5;
-    height: 100vh;
 }
 
 .sidebar {
@@ -80,6 +83,8 @@ a {
     gap: 50px;
     padding: 1em;
     color: var(--light-back-color);
+    z-index: 100;
+    box-shadow: 3px 0px 2px var(--dark-back-color);
 }
 
 .main-menu ul li{
@@ -112,17 +117,17 @@ a {
     grid-column: 2;
     grid-row: 1;
     display: grid;
-    grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    outline: 4px solid blue;
-    padding: .5em 1em;
+    padding: 0 1em 1em 1em;
+    z-index: 90;
+    box-shadow:0 4px 4px 0 var(--dark-back-color);
 }
 
 .top-contain {
   grid-row: 1;
+  grid-column: 1;
   display: flex;
   align-items: center;
-  height: 56px;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
@@ -140,19 +145,91 @@ input {
   border-radius: 15px;
   border: none;
   background-color: var(--medium-back-color);
-  flex-grow: 1;
+  flex: 1 1 150px;
   max-width: 600px;
+  padding: 2px 12px;
 }
 
 .notifications ul {
   display: flex;
   gap: 2em;
   align-items: center;
-  margin: 0 .5em;
+  margin: 0 1em;
+}
+
+.bottom-contain {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+  padding-top: 8px;
+}
+
+.hi-there {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  font-size: 1rem;
+  font-family: "roboto-bold";
+}
+
+.hi-there img {
+  height: 84px;
+}
+
+.hi-there p {
+  font-size: 1.5rem;
+  padding-top: 6px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+button {
+  border: none;
+  border-radius: 20px;
+  padding: 8px 36px;
+  font-family: "roboto-bold";
+  color: var(--light-back-color);
+  background-color: var(--dark-back-color);
 }
 
 .main {
     background-color: var(--medium-back-color);
     grid-column: 2;
     grid-row: 2;
+}
+
+/*---hover, focus effects---*/
+button:hover {
+  color: var(--dark-back-color);
+  background-color: var(--accent-color);
+  cursor: pointer;
+  box-shadow: 2px 4px 2px 2px;
+}
+
+a:hover {
+  color: var(--dark-back-color);
+  background-color: var(--accent-color);
+  cursor: pointer;
+  box-shadow: 2px 4px 2px 2px;
+}
+
+.notifications a:hover {
+  color: var(--accent-color);
+  background-color: inherit;
+  box-shadow: none;
+}
+
+input:focus {
+  color: var(--light-back-color);
+  background-color: var(--dark-back-color);
+  border: none;
+  outline: none;
 }
