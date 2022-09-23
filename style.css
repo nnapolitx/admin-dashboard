@@ -8,6 +8,11 @@
   src: url(font/Roboto-Bold.ttf);
 }
 
+@font-face {
+  font-family: "roboto-thin";
+  src: url(font/Roboto-Thin.ttf);
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -231,7 +236,7 @@ button {
 .card {
   height: 300px;
   background-color: var(--light-back-color);
-  padding: 1em;
+  padding: 1em 2em;
   border-radius: 10px;
   flex: 1 1 300px;
   max-width: 500px;
@@ -247,7 +252,7 @@ button {
   gap: 1em;
   background-color: var(--light-back-color);
   border-radius: 10px;
-  padding: 1em;
+  padding: 1em 2em;
 }
 
 .announce-container div+div {
@@ -255,9 +260,26 @@ button {
   padding-top: 1em;
 }
 
+.announce-container div{
+  padding-bottom: 1em;
+}
+
+.trend-container {
+  background-color: var(--light-back-color);
+  padding: 2em 1em;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1;
+  justify-content: center;
+}
+
 .trender {
   display: grid;
   grid-template-columns: 1fr 2fr;
+}
+
+.trender+.trender {
+  padding-top: 1.5em;
 }
 
 .trender img {
@@ -274,6 +296,11 @@ button {
   font-family: "roboto";
   margin: 0;
   padding: 0;
+}
+
+.trender p+p {
+  padding-top:4px;
+  opacity: .55;
 }
 
 /*---hover, focus effects---*/
