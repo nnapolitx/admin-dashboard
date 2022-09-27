@@ -414,24 +414,50 @@ svg:hover {
       gap: 0;
       padding: 1em;
       margin: 0;
+      font-size: 1rem;
     }
 
     .logo {
       width: 100%;
       display: flex;
       justify-content: center;
+      margin-bottom: 4px;
     }
 
-    .main-menu ul{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
-    
-    .settings-menu ul{
-      display: flex;
-      flex-wrap: wrap;
+    .main-menu ul, .settings-menu ul{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 1fr);
+      grid-template-rows: repeat(auto-fit, 1fr);
+      margin: 8px;
+      gap: 4px;
+      align-items: center;
       justify-content: center;
     }
+
+    .main-menu ul li, .settings-menu ul li{
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      font-size: 1rem;
+    }
+    
+    .buttons-container {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .main {
+      padding: 1em;
+    }
+
+    .card {
+      height: unset;
+      flex-basis: unset;
+      min-height: unset;
+      padding: 1em;
+    }
+
   }  
 }
