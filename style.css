@@ -209,7 +209,7 @@ button {
   grid-column: 2;
   grid-row: 2;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3fr 1.25fr;
   gap: 2em;
   padding: 1em 3em;
 }
@@ -222,13 +222,14 @@ button {
 .projects {
   grid-column: 1;
   grid-row: 1/3;
-  
+  font-size: larger;
 }
 
 .card-container {
   display: flex;
   flex-wrap: wrap;
   gap: 2em;
+  margin-top: 12px;
 }
 
 .card {
@@ -242,10 +243,16 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow:0 4px 4px 0 var(--dark-back-color);
+  background: linear-gradient(90deg, var(--dark-back-color) 3%, var(--light-back-color) 3%);
 }
 
 .icons{
   align-self: flex-end;
+}
+
+.card-text {
+  opacity: .65;
 }
 
 .card p {
@@ -256,6 +263,10 @@ button {
   grid-column: 2;
 }
 
+.announcements{
+  font-size: larger;
+}
+
 .announce-container {
   display: flex;
   flex-direction: column;
@@ -264,6 +275,8 @@ button {
   border-radius: 10px;
   padding: 1em 2em;
   font-size: .85rem;
+  margin-top: 12px;
+  box-shadow:0 4px 4px 0 var(--dark-back-color);
 }
 
 .announce-container p {
@@ -277,21 +290,33 @@ button {
 
 .announce-container div{
   padding-bottom: 1em;
+  
+}
+
+.announce-text {
+  opacity: .7;
+}
+
+.trending {
+  font-size: larger;
 }
 
 .trend-container {
   background-color: var(--light-back-color);
-  padding: 2em 1em;
+  padding: 1em 2em;
   border-radius: 10px;
   display: grid;
   grid-template-columns: 1;
   justify-content: start;
+  box-shadow:0 4px 4px 0 var(--dark-back-color);
+  margin-top: 12px;
 }
 
 .trender {
   display: grid;
   grid-template-columns: 1fr 2fr;
   font-size: 1rem;
+  gap: 12px;
 }
 
 .trender+.trender {
@@ -345,4 +370,68 @@ input:focus {
   background-color: var(--dark-back-color);
   border: none;
   outline: none;
+}
+
+svg:hover {
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+/*---Media Queries---*/
+
+@media (max-width: 1200px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  .top-contain {
+    gap: 1.5em;
+  }
+
+  .bottom-contain{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  @media (max-width: 750px) {
+    .grid-container{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items:unset;
+      gap: 0;
+      padding: 1em;
+      margin: 0;
+    }
+
+    .logo {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .main-menu ul{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    
+    .settings-menu ul{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }  
 }
